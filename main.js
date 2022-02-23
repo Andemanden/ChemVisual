@@ -5,6 +5,5 @@ function setup() {
 function draw() {
   background(120);
   console.log()
-  
 }
  
