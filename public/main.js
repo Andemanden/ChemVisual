@@ -25,6 +25,5 @@ function mouseDragged() {
 }
 
 function draw() {
-  
 }
  
