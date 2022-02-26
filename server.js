@@ -16,9 +16,16 @@ var io = socket(server, {
   });
 
 io.sockets.on('connection', newConnection);
+io.on("connection", (socket) => {  
+    socket.on("disconnect", (reason) => {
+      console.log('Client disconnected: '+socket.id);
+    });});
 
 function newConnection(socket){
     console.log('New connection: '+socket.id);
-
-
+    socket.on('mouse', mouseMsg);
+    function mouseMsg(data){
+        socket.broadcast.emit('mouse',data)
+    }
 }
+
