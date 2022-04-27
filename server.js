@@ -1,4 +1,4 @@
-//const { response } = require('express');
+const { response } = require('express');
 var express = require('express');
 var app = express();
 var server = app.listen(3000);
@@ -13,20 +13,19 @@ function setup(){
   console.log("Setup has run")
   url='hello'
 }
-
 setup();
- 
-console.log(url);
+
+
 function apiCall(){
   //Make notation an object maybe
   //And then unpack it and call the api using smiles notation
-  
+  /*
   fetch('https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularFormula/JSON')
   .then(response => response.json())
   .then(data => console.log(data)); 
 
   return response.json();
-
+*/
 /*
   url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularFormula/JSON';
   let response = await fetch(url);
@@ -75,8 +74,8 @@ io.engine.on("connection_error", (err) => {
 function newConnection(socket){
   console.log('______________________');
   console.log('New connection: '+socket.id);
-  socket.on('molecular notation', apiCall);
-  console.log(apiCall());  
+  //socket.on('molecular notation', apiCall);
+  //console.log(apiCall());  
   
   
 }

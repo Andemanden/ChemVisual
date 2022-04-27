@@ -9,9 +9,87 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-
+    <link rel="stylesheet" href="path/to/grapes.min.css">
   </head>
   <body>
+    <body id="i2pc">
+      <form class="form" id="iwe5q">
+        <button type="submit" class="button" id="ifyhr">Send</button>
+        <button class="button" id="i0ivw">Send</button>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+        </div>
+      </form>
+      <div data-gjs="navbar-items" class="navbar-items-c" id="is7ji">
+        <nav data-gjs="navbar-menu" class="navbar-menu" id="ivq1a">
+        </nav>
+      </div>
+      <div data-gjs="navbar" class="navbar" id="igmqg">
+        <div class="navbar-container" id="i8otr">
+          <div id="ia9rd" class="navbar-burger">
+            <div class="navbar-burger-line">
+            </div>
+            <div class="navbar-burger-line">
+            </div>
+            <div class="navbar-burger-line">
+            </div>
+          </div>
+          <div data-gjs="navbar-items" class="navbar-items-c" id="i92oj">
+            <nav data-gjs="navbar-menu" class="navbar-menu" id="isbh4">
+            </nav>
+          </div>
+          <div data-gjs="navbar-items" class="navbar-items-c" id="igib7">
+            <nav data-gjs="navbar-menu" class="navbar-menu" id="i274s">
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div data-gjs="navbar-items" class="navbar-items-c" id="ipzmd">
+      </div>
+      <section class="blk-sect" id="ip15r">
+        <div class="container-width" id="i4thg">
+        </div>
+      </section>
+    
+    <script>var items = document.querySelectorAll('#ia9rd');
+      for (var i = 0, len = items.length; i < len; i++) {
+        (function(){
+          var e,t=0,n=function(){
+            var e,t=document.createElement("void"),n={
+              transition:"transitionend",OTransition:"oTransitionEnd",MozTransition:"transitionend",WebkitTransition:"webkitTransitionEnd"};
+            for(e in n)if(void 0!==t.style[e])return n[e]}
+          (),r=function(e){
+            var t=window.getComputedStyle(e),n=t.display,r=(t.position,t.visibility,t.height,parseInt(t["max-height"]));
+            if("none"!==n&&"0"!==r)return e.offsetHeight;
+            e.style.height="auto",e.style.display="block",e.style.position="absolute",e.style.visibility="hidden";
+            var i=e.offsetHeight;
+            return e.style.height="",e.style.display="",e.style.position="",e.style.visibility="",i}
+          ,i=function(e){
+            t=1;
+            var n=r(e),i=e.style;
+            i.display="block",i.transition="max-height 0.25s ease-in-out",i.overflowY="hidden",""==i["max-height"]&&(i["max-height"]=0),0==parseInt(i["max-height"])?(i["max-height"]="0",setTimeout(function(){
+              i["max-height"]=n+"px"}
+    ,10)):i["max-height"]="0"}
+          ,a=function(r){
+            if(r.preventDefault(),!t){
+              var a=this.closest("[data-gjs=navbar]"),o=a.querySelector("[data-gjs=navbar-items]");
+              i(o),e||(o.addEventListener(n,function(){
+                t=0;
+                var e=o.style;
+                0==parseInt(e["max-height"])&&(e.display="",e["max-height"]="")}
+                                         ),e=1)}
+          };
+          "gjs-collapse"in this||this.addEventListener("click",a),this["gjs-collapse"]=1
+        }
+         .bind(items[i]))();
+      }
+    </script>
+    
     <script src="main.js"></script>
   </body>
 </html> 
