@@ -26,4 +26,3 @@ function mouseDragged() {
 
 function draw() {
 }
- 
