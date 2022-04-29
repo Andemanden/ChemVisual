@@ -41,13 +41,9 @@ function apiCall(){
   */
 }
 
-
-
-
 var socket = require('socket.io');
 
 function sendmolecule(){
-
 
 }
 
