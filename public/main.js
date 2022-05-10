@@ -4,9 +4,10 @@ let drawmode=-1;
 let selAtom=13;
 let molecule=[];
 let smiles = [];
-let apiresponse;
-let drawing=-1;
-let selatom=13;
+let apiresponse; 
+let drawing=-1; //If still drawing then = 1
+let selatom=13; //Selected atom
+let smilesInput;
 
 function preload() {
   let url =
@@ -63,6 +64,31 @@ var Dim3 = function(p){
 //var anewsketch1 = new p5(Dim2);
 //var anewsketch2 = new p5(Dim3);
 
+function apicalls(smiles, type, D3){
+  //Makes url form the wanted parameters
+  let url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/"
+  +smiles+"/"+type+"/JSON";
+  httpGet(url, 'json', false, 
+  function(response) {
+    apiresponse = response;
+  });
+  if (D3==true){
+    let url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/"
+    +smiles+"/"++"/JSON";
+    httpGet(url, 'json', false, 
+    function(response) {
+    apiresponse = response;
+    });
+
+  }
+  /*
+  httpGet(url, 'json', false, 
+  function(response) {
+    apiresponse = response;
+  });
+  */
+  console.log(url);
+}
 
 function setup() {
   //createCanvas(400, 400);
@@ -81,7 +107,7 @@ function setup() {
 }
 
 function draw() {
-  background(235);
+  background(225);
   drawGUI();
   //Draw all atoms and bonds
   for (let elm of molecule){
@@ -92,4 +118,6 @@ function draw() {
   //circle(200,200,20);
   
 }
+
+
 

@@ -1,4 +1,4 @@
-class Molecule {
+class Molecule extends p5.Vector  {
     constructor(x, y, t) {
         this.pos = createVector(x, y, z);
         this.type = t;  //Atomnumber or bondtype

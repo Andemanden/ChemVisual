@@ -28,15 +28,29 @@ function buildGUI() {
     button.mousePressed(drawmode=1);
     button.labl = 'O';
    */
-  
+    let inp = createInput('');
+    inp.position(250, 4);
+    inp.size(100);
+    inp.input(smilesInputFxn);
 
 }
-function mousePressed(){
-    
+
+function smilesInputFxn(){
+    smilesInput = this.value();
+    console.log(smilesInput);
+}
+
+function mousePressed(){   
+    if (drawmode==4 && mouseX>176  && mouseX<210 && (mouseY)>4 && (mouseY)<25){
+        apicalls(smilesInput, "synonyms", true); //"MolecularFomula"
+        console.log("3D");
+    }
     if (mouseX>35 && mouseX<598 && (mouseY)>35 && (mouseY)<370
         && drawing==-1){
+
         console.log(drawmode);
-        console.log(mouseY);
+        console.log("X: "+mouseX);
+        console.log("Y: "+mouseY);
         if (drawmode<5){ //Generel buttons
             
         } else if (drawmode>4 && drawmode<9){ // Bonds and more
