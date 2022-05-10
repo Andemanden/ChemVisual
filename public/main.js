@@ -8,6 +8,8 @@ let apiresponse;
 let drawing=-1; //If still drawing then = 1
 let selatom=13; //Selected atom
 let smilesInput;
+let img;
+let i=0;
 
 function preload() {
   let url =
@@ -66,28 +68,47 @@ var Dim3 = function(p){
 
 function apicalls(smiles, type, D3){
   //Makes url form the wanted parameters
-  let url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/"
-  +smiles+"/"+type+"/JSON";
-  httpGet(url, 'json', false, 
-  function(response) {
-    apiresponse = response;
-  });
+ 
   if (D3==true){
     let url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/"
-    +smiles+"/"++"/JSON";
+    +smiles+"/"+"PNG?record_type=3d&image_size=large";
+    img3d = createImg(url,'Smiles notation wrong');
+    img3d.position(640, 20);
+  } else if(D3==false) {
+    let url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/"
+    +smiles+"/property/"+type+"/JSON";
     httpGet(url, 'json', false, 
     function(response) {
-    apiresponse = response;
+      apiresponse = response.PropertyTable.Properties[0];
+      console.log(response);
     });
-
+  } else if(D3=="2D"){
+    let url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/"
+    +smiles+"/PNG";
+    img2d = createImg(url,'Smiles notation wrong');
+    img2d.position(380, 100);
+    img2d.size(200, 200);
   }
+
+
   /*
   httpGet(url, 'json', false, 
   function(response) {
     apiresponse = response;
   });
   */
-  console.log(url);
+  console.log(apiresponse);
+  /*
+  var myImage = document.querySelector('img');
+
+  fetch('flowers.jpg').then(function(response) {
+    return response.blob();
+  }).then(function(myBlob) {
+    var objectURL = URL.createObjectURL(myBlob);
+    myImage.src = objectURL;
+});
+*/
+
 }
 
 function setup() {
@@ -96,7 +117,6 @@ function setup() {
   //background(120);
   socket = io.connect('http://localhost:3000');
   //socket.on('mouse', newDrawing);
-  console.log(apiresponse);
  
   buildGUI();
 
@@ -107,16 +127,27 @@ function setup() {
 }
 
 function draw() {
-  background(225);
+  background(245);
+  for (var key in apiresponse) {
+    if (apiresponse.hasOwnProperty(key)) {
+        i++
+        text(key+": "+apiresponse[key], 35, 40+(i*20));
+        //console.log(key + " -> " + apiresponse[key]);
+    }
+  }
+  i=0;
+ 
   drawGUI();
   //Draw all atoms and bonds
   for (let elm of molecule){
     elm.show();
     elm.update();
   }
-
-  //circle(200,200,20);
+  textSize(15);
+  fill(0, 0, 0);
   
+ 
+
 }
 
 

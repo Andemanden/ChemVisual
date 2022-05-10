@@ -28,10 +28,14 @@ function buildGUI() {
     button.mousePressed(drawmode=1);
     button.labl = 'O';
    */
+    //Input field
     let inp = createInput('');
     inp.position(250, 4);
     inp.size(100);
     inp.input(smilesInputFxn);
+    //Text
+    textSize(15);
+    fill(0, 0, 0);
 
 }
 
@@ -42,8 +46,16 @@ function smilesInputFxn(){
 
 function mousePressed(){   
     if (drawmode==4 && mouseX>176  && mouseX<210 && (mouseY)>4 && (mouseY)<25){
-        apicalls(smilesInput, "synonyms", true); //"MolecularFomula"
+        apicalls(smilesInput, "none", true); 
         console.log("3D");
+        apicalls(smilesInput, "none", "2D");
+
+    } else if (drawmode==3 && mouseX<177  && mouseX>142 && (mouseY)>4 && (mouseY)<25){
+        console.log("Calculation");
+        apicalls(smilesInput, "Title,MolecularFormula,MolecularWeight,IUPACName,IsotopeAtomCount,"+
+        "AtomStereoCount,FeatureAcceptorCount3D,FeatureDonorCount3D,FeatureHydrophobeCount3D"
+        , false); //"MolecularFomula"
+        
     }
     if (mouseX>35 && mouseX<598 && (mouseY)>35 && (mouseY)<370
         && drawing==-1){
@@ -69,7 +81,7 @@ function mousePressed(){
 }
 
 function texts(){
-
+    
 
 }
 
@@ -99,9 +111,8 @@ function buttonpress(){
 
 }
 
-
 function drawGUI(){
-    fill(250,250,250);
+    fill(230,230,230);
     noStroke();
     rectMode(CORNER);
     rect(2, 0, 598, 30, 5); //Top
