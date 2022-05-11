@@ -8,8 +8,7 @@ class Molecule extends p5.Vector  {
    
 
     addtosmiles(){
-
-
+       smiles.push(types[this.type]);
     }
 
 
@@ -20,7 +19,7 @@ class Atom extends Molecule {
     constructor(x, y, t, r) {
         super(x, y, t);
         this.r = r;
-        this.hidden=false;
+        
     }
 
     update (){
@@ -28,9 +27,6 @@ class Atom extends Molecule {
 
     }
     overlaps(x,y){
-        if (0=0){
-
-        }
 
     }
     show(){
@@ -42,6 +38,7 @@ class Atom extends Molecule {
     create(){
         this.pos.x=mouseX;
         this.pos.y=mouseY;
+        this.hidden=false;
     }
 
 
@@ -51,7 +48,6 @@ class Atom extends Molecule {
 class Bond extends Molecule {
     constructor(x, y, t) {
         super(x, y, t);
-        this.hidden=false;
         this.mouseX=0;
         this.mouseY=0;
     }
@@ -66,12 +62,13 @@ class Bond extends Molecule {
 
     show(){
         line(this.pos.x,this.pos.y,this.mouseX,(this.mouseY));
+        this.hidden=false;
     }
 
     create(){
         this.mouseX=mouseX;
         this.mouseY=mouseY;
-
+        
     }
 
 }

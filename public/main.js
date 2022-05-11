@@ -60,7 +60,7 @@ function apicalls(smiles, type, D3){
     let url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/"
     +smiles+"/PNG";
     img2d = createImg(url,'Smiles notation wrong');
-    img2d.position(380, 100);
+    img2d.position(390, 100);
     img2d.size(200, 200);
   }
 }

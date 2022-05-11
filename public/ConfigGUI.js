@@ -59,6 +59,7 @@ function mousePressed(){
             for (let i = molecules.length - 1; i < molecules.length; i++) {
                 //Iterates over last value of array
                 molecules[i].create();
+                moleculs[i].addtosmiles();
             }
             molecules.push(new Bond(mouseX,(mouseY),drawmode-4));
             drawing*=-1;
@@ -70,6 +71,7 @@ function mousePressed(){
             //Iterates over last value of array
             drawing*=-1
             molecules[i].create();
+            moleculs[i].addtosmiles();
         }
     }
 
