@@ -1,6 +1,7 @@
+/*-----Class Functions For Molecule Parts----- */
 class Molecule extends p5.Vector  {
     constructor(x, y, t) {
-        this.pos = createVector(x, y, z);
+        this.pos = createVector(x, y);
         this.type = t;  //Atomnumber or bondtype
         this.hidden=true;
     }
@@ -14,6 +15,7 @@ class Molecule extends p5.Vector  {
 
 }
 
+/*---The Atom Class---*/
 class Atom extends Molecule {
     constructor(x, y, t, r) {
         super(x, y, t);
@@ -34,24 +36,24 @@ class Atom extends Molecule {
     show(){
         if (this.hidden==false){
             text(types[this.type],this.pos.x,this.pos.y,10,10);
-            
         }
     }
 
     create(){
-        
-
-
+        this.pos.x=mouseX;
+        this.pos.y=mouseY;
     }
 
 
 }
 
+/*---The Bond Class---*/
 class Bond extends Molecule {
     constructor(x, y, t) {
         super(x, y, t);
         this.hidden=false;
-        
+        this.mouseX=0;
+        this.mouseY=0;
     }
 
     update (){
@@ -63,11 +65,12 @@ class Bond extends Molecule {
     }
 
     show(){
-        line(this.pos.x,this.pos.y,mouseX,(mouseY+600));
+        line(this.pos.x,this.pos.y,this.mouseX,(this.mouseY));
     }
 
     create(){
-
+        this.mouseX=mouseX;
+        this.mouseY=mouseY;
 
     }
 
