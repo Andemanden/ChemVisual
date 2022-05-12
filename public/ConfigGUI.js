@@ -36,6 +36,8 @@ function smilesInputFxn(){
     console.log(smilesInput);
 }
 
+
+
 function mousePressed(){   
     if (drawmode==4 && mouseX>176  && mouseX<210 && (mouseY)>4 && (mouseY)<25){
         //For 3D button
