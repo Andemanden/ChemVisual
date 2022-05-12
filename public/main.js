@@ -25,7 +25,7 @@ function preload() {
   fontChemical = loadFont('/fonts/chemical.otf');
 }
 
-/*---For possibly drawing on seperate canvas  using WEBGL---*/
+/*---For possibly drawing on seperate canvas using WEBGL for 3D view of molecule---*/
 //Uncomment to use
 /* var Dim3 = function(p){
   p.x=100;
