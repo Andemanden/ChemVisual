@@ -54,7 +54,7 @@ function mousePressed(){
     }
     if (mouseX>35 && mouseX<598 && (mouseY)>35 && (mouseY)<370
         && drawing==-1){ //Inside of drawing field
-        if (drawmode<5){ //Generel buttons
+        if (drawmode<3){ //Generel buttons
 
         } else if (drawmode>4 && drawmode<9){ // Bonds and more
             molecules.push(new Atom(mouseX,(mouseY),selatom,20));
