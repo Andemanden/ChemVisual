@@ -1,4 +1,4 @@
-# ChemVisual ![Lang][lng-image]
+# ChemVisual ![Lang][lng-image] ![gym][gym-image]
 ## Programmeringsprojekt
 A Chemical Visualiser And Analysis Tool. This tool is made for chemical engineers. 
 The 2.0 version will be featuring regioselectivity testing, deprotonation sites, logP calculator, singepoint energy analysis, electron density map and much more
@@ -8,3 +8,7 @@ The model is based on the latest Javascript sockets and the InChl+Smiles chemica
 
 
 [lng-image]: https://img.shields.io/badge/LNG-Java_Script-orange
+[gym-image]: https://img.shields.io/badge/Lecture-Programming_B-blue
+
+
+
