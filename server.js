@@ -41,3 +41,4 @@ function newConnection(socket){ //In case of new connection
   console.log('______________________');
   console.log('New connection: '+socket.id);
 }
+ 
