@@ -13,7 +13,7 @@ class Molecule extends p5.Vector  {
 
 
 }
-
+ 
 /*---The Atom Class---*/
 class Atom extends Molecule {
     constructor(x, y, t, r) {
