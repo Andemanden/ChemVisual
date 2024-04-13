@@ -35,7 +35,7 @@ function smilesInputFxn(){
     smilesInput = this.value(); 
     console.log(smilesInput);
 }
-
+ 
 
 
 function mousePressed(){   
