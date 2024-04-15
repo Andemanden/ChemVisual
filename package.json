@@ -23,7 +23,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "grapesjs": "^0.18.4",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.7.5"
   }
 }
 
