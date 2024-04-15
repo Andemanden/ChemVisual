@@ -1,4 +1,4 @@
-# ChemVisual ![Lang][lng-image] ![gym][gym-image]
+# ChemVisual ![Lang][lng-image] ![gym][gym-image] ![chem][chem-image]
 ## Programmeringproject
 A Chemical Visualiser And Analysis Tool. This tool is made for chemical engineers. 
 
@@ -13,6 +13,7 @@ The model is based on the latest Javascript sockets and the InChl+Smiles chemica
 
 [lng-image]: https://img.shields.io/badge/LNG-Java_Script-orange
 [gym-image]: https://img.shields.io/badge/Lecture-Programming_B-blue
+[chem-image]: https://img.shields.io/badge/Type-Analysis_Tool-brown
 
 
 
