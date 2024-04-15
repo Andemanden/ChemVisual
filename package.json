@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Andemanden/ChemVisual#readme",
   "dependencies": {
-    "express": "^4.17.3",
+    "express": "^4.19.2",
     "grapesjs": "^0.18.4",
     "socket.io": "^4.7.5"
   }
